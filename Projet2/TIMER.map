@@ -8,6 +8,8 @@ Section Cross References
     main.o(.text.main) refers to mytimer.o(.text.MyTimer_Base_Init) for MyTimer_Base_Init
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     mytimer.o(.ARM.exidx.text.MyTimer_Base_Init) refers to mytimer.o(.text.MyTimer_Base_Init) for [Anonymous Symbol]
+    mytimer.o(.ARM.exidx.text.MyTimer_Base_Start) refers to mytimer.o(.text.MyTimer_Base_Start) for [Anonymous Symbol]
+    mytimer.o(.ARM.exidx.text.MyTimer_Base_Stop) refers to mytimer.o(.text.MyTimer_Base_Stop) for [Anonymous Symbol]
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main

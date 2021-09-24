@@ -24,8 +24,13 @@ int main(void) {
 	
 	/*On initialise le timer ? 0 cette formule est vraie pour les timer 2 ? 7*/
 	RCC->APB1ENR |= (1<< 0);/*Le nombre de d?calage ccorrespond aux num de TIM -2*/
-
-	MyTimer.Timer = TIM4;
+	
+	
+	MyTimer.Timer = TIMER;
+	MyTimer.ARR = TIMER_ARR;
+	MyTimer.PSC = TIMER_PSC;
+	MyTimer.Timer_num = 2;
+	
 	MyTimer_Base_Init(&MyTimer);
 
 	do{
