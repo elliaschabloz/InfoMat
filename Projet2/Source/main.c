@@ -17,15 +17,28 @@
 
 #define PERIODE_TIM2 500
 #define MON_TIMER TIM2
+<<<<<<< HEAD
 #define PERIODE_CLK (1/72000) //On le déclare mais je sais pas quand on l'utilise mdr
 #define TIMER_PSC 0x0F99 //3999
 #define TIMER_ARR 0x2327 //8999
 
 
 MyTimer_Struct_TypeDef MyTimer;
+=======
+#define PERIODE_CLK (1/72000)
+#define TIMER_PSC 1000
+#define TIMER_ARR 36000
+
+
+ MyTimer_Struct_TypeDef MyTimer;
+>>>>>>> e921f695f63385365180411dd1ae02d12983512f
 
 
 int main(void) {
+<<<<<<< HEAD
+		
+	MyTimer.Timer = MON_TIMER;
+=======
 	
 	/*TEST en simulé pour mettre le clock a 0.5ms*/
 	/*
@@ -34,7 +47,12 @@ int main(void) {
 	TIM2->PSC=0x1770;
 	*/
 	
+<<<<<<< HEAD
 	MyTimer.Timer = MON_TIMER;
+=======
+	MyTimer.Timer = TIMER;
+>>>>>>> 9173126c475d27b3679b460546051275d2d1b8aa
+>>>>>>> e921f695f63385365180411dd1ae02d12983512f
 	MyTimer.ARR = TIMER_ARR;
 	MyTimer.PSC = TIMER_PSC;
 	MyTimer.Timer_num = 2;

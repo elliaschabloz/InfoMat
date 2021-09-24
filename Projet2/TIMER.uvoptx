@@ -248,7 +248,11 @@
 
   <Group>
     <GroupName>::Device</GroupName>
+<<<<<<< HEAD
     <tvExp>0</tvExp>
+=======
+    <tvExp>1</tvExp>
+>>>>>>> e921f695f63385365180411dd1ae02d12983512f
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>1</RteFlg>
