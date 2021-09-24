@@ -1,3 +1,5 @@
+#include "stm32f10x.h"
+#include "MyTimer.h"
 
 //on doit configurer le TIMER2 de période T = 500ms
 //pour cela, on doit trouver les valeurs de PSC et ARR
@@ -9,12 +11,12 @@
 
 #define PERIODE_TIM2 500
 #define TIMER TIM2
-#define PERIODE_CLK = (1/72000)
+#define PERIODE_CLK (1/72000)
 #define PSC 2
 #define ARR 11999999
 
 
-
+MyTimer_Struct_TypeDef * TIMER ;
 
 
 
