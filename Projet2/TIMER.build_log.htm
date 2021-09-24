@@ -3,30 +3,51 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.34.0.0
-Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: CSN CSN, INSA de Toulouse, LIC=----
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: AHAMDY Jdihadi, INSA, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.34.0.0
+Toolchain:       MDK-Lite  Version: 5.29.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.16
-Assembler:       Armasm.exe V6.16
-Linker/Locator:  ArmLink.exe V6.16
-Library Manager: ArmAr.exe V6.16
-Hex Converter:   FromElf.exe V6.16
-CPU DLL:         SARMCM3.DLL V5.34.0.0
+C Compiler:      ArmClang.exe V6.13.1
+Assembler:       Armasm.exe V6.13.1
+Linker/Locator:  ArmLink.exe V6.13.1
+Library Manager: ArmAr.exe V6.13.1
+Hex Converter:   FromElf.exe V6.13.1
+CPU DLL:         SARMCM3.DLL V5.29.0.0
 Dialog DLL:      DARMSTM.DLL V1.68.0.0
-Target DLL:      UL2CM3.DLL V1.163.9.0
+Target DLL:      UL2CM3.DLL V1.163.0.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-\\netapp2\chabloz\4IR\micro mat STM32\Projet2\TIMER.uvprojx
+C:\Users\jia-g\MPSTM32\InfoMat\Projet2\TIMER.uvprojx
 Project File Date:  09/24/2021
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Target 1'
+*** Using Compiler 'V6.13.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Simu'
+../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
+C:/Users/jia-g/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(147): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cmInstr.h(435): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
+  return(result);
+  ~~~~~~ ^~~~~~
+../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
+C:/Users/jia-g/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not defined, evaluates to 0 [-Wundef]
+#if (__CM3_REV < 0x0201)                   /* core r2p1 */
+     ^
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(1505): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+../MesDrivers/Source/MyTimer.c(2): error: 'MyTimer.h' file not found
+#include "MyTimer.h"
+         ^~~~~~~~~~~
+3 warnings and 1 error generated.
+compiling MyTimer.c...
+compiling main.c...
+".\TIMER.axf" - 1 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -36,10 +57,12 @@ Package Vendor: Keil
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  .\RTE\_Simu
+  C:\Users\jia-g\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Target not created.
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
