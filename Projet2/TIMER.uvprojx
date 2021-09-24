@@ -397,13 +397,12 @@
         </Group>
         <Group>
           <GroupName>MesDrivers</GroupName>
-          <Files>
-            <File>
-              <FileName>MyTimer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\MesDrivers\Include\MyTimer.h</FilePath>
-            </File>
-          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -798,13 +797,12 @@
         </Group>
         <Group>
           <GroupName>MesDrivers</GroupName>
-          <Files>
-            <File>
-              <FileName>MyTimer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\MesDrivers\Include\MyTimer.h</FilePath>
-            </File>
-          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Device</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -812,8 +810,51 @@
 
   <RTE>
     <apis/>
-    <components/>
-    <files/>
+    <components>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.4.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.7.0"/>
+        <targetInfos>
+          <targetInfo name="Reel"/>
+          <targetInfo name="Simu"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS">
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Reel"/>
+          <targetInfo name="Simu"/>
+        </targetInfos>
+      </component>
+    </components>
+    <files>
+      <file attr="config" category="header" name="RTE_Driver\Config\RTE_Device.h" version="0.0.0">
+        <instance index="0">RTE\Device\STM32F103RB\RTE_Device.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Reel"/>
+          <targetInfo name="Simu"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" condition="STM32F1xx MD ARMCC" name="Device\Source\ARM\startup_stm32f10x_md.s" version="0.0.0">
+        <instance index="0">RTE\Device\STM32F103RB\startup_stm32f10x_md.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Reel"/>
+          <targetInfo name="Simu"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_stm32f10x.c" version="0.0.0">
+        <instance index="0">RTE\Device\STM32F103RB\system_stm32f10x.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Reel"/>
+          <targetInfo name="Simu"/>
+        </targetInfos>
+      </file>
+    </files>
   </RTE>
 
   <LayerInfo>

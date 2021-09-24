@@ -27,66 +27,66 @@ Project File Date:  09/24/2021
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Simu'
-Source/main.c(1): warning: In file included from...
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(147): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cmInstr.h(435): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
-  return(result);
-  ~~~~~~ ^~~~~~
-Source/main.c(1): warning: In file included from...
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not defined, evaluates to 0 [-Wundef]
-#if (__CM3_REV < 0x0201)                   /* core r2p1 */
-     ^
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(1505): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-Source/main.c(2): warning: In file included from...
-../MesDrivers/Include\MyTimer.h(5): warning: padding size of 'MyTimer_Struct_TypeDef' with 3 bytes to alignment boundary [-Wpadded]
-typedef struct
-        ^
-4 warnings generated.
-compiling main.c...
-../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(147): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cmInstr.h(435): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
-  return(result);
-  ~~~~~~ ^~~~~~
-../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not defined, evaluates to 0 [-Wundef]
-#if (__CM3_REV < 0x0201)                   /* core r2p1 */
-     ^
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(1505): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
+assembling startup_stm32f10x_md.s...
 ../MesDrivers/Source/MyTimer.c(2): warning: In file included from...
 ../MesDrivers/Include\MyTimer.h(5): warning: padding size of 'MyTimer_Struct_TypeDef' with 3 bytes to alignment boundary [-Wpadded]
 typedef struct
         ^
-4 warnings generated.
+1 warning generated.
 compiling MyTimer.c...
+Source/main.c(2): warning: In file included from...
+../MesDrivers/Include\MyTimer.h(5): warning: padding size of 'MyTimer_Struct_TypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+Source/main.c(19): warning: no previous extern declaration for non-static variable 'MyTimer' [-Wmissing-variable-declarations]
+ MyTimer_Struct_TypeDef MyTimer;
+                        ^
+Source/main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+ MyTimer_Struct_TypeDef MyTimer;
+ ^
+2 warnings generated.
+compiling main.c...
+RTE/Device/STM32F103RB/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103RB/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
 linking...
-.\TIMER.axf: Error: L6320W: Ignoring --entry command. Cannot find argument 'Reset_Handler'.
-.\TIMER.axf: Warning: L6320W: Ignoring --first command. Cannot find argument '__Vectors'.
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 1 warning and 1 error messages.
-".\TIMER.axf" - 1 Error(s), 9 Warning(s).
+Program Size: Code=668 RO-data=252 RW-data=0 ZI-data=1648  
+".\TIMER.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
                 Keil.STM32F1xx_DFP.2.3.0
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103RB
+  .\RTE\_Simu
+  C:\Programdata\Keil\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
   C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

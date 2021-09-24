@@ -10,23 +10,18 @@
 // Pour PSC=2 => ARR+1 = 12 000 000 => ARR=11 999 999
 
 #define PERIODE_TIM2 500
-#define TIMER TIM2
+#define MON_TIMER TIM2
 #define PERIODE_CLK (1/72000)
 #define TIMER_PSC 1000
 #define TIMER_ARR 36000
 
 
-static MyTimer_Struct_TypeDef MyTimer ;
+ MyTimer_Struct_TypeDef MyTimer;
 
 
 int main(void) {
-	
-	
-	/*On initialise le timer ? 0 cette formule est vraie pour les timer 2 ? 7*/
-	RCC->APB1ENR |= (1<< 0);/*Le nombre de d?calage ccorrespond aux num de TIM -2*/
-	
-	
-	MyTimer.Timer = TIMER;
+		
+	MyTimer.Timer = MON_TIMER;
 	MyTimer.ARR = TIMER_ARR;
 	MyTimer.PSC = TIMER_PSC;
 	MyTimer.Timer_num = 2;
