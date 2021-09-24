@@ -17,12 +17,14 @@ typedef  struct
 *************************************************************************************************
 */
 
-void MyTimer_Base_Init ( MyTimer_Struct_TypeDef* Timer ) ;
+void MyTimer_Base_Init (MyTimer_Struct_TypeDef * Timer) ;
+void MyTimer_Base_Start(MyTimer_Struct_TypeDef * Timer);
+void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer);
 
 
-
-
-#define MyTimer_Base_Start(Timer)  ( . . . )
-#define MyTimer_Base_Stop(Timer)  ( . . . )
+/*
+#define MyTimer_Base_Start(Timer) ()
+#define MyTimer_Base_Stop(Timer) ()
+*/
 
 #endif

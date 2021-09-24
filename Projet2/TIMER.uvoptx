@@ -334,8 +334,6 @@
   <Group>
     <GroupName>MesSources</GroupName>
     <tvExp>1</tvExp>
-<<<<<<< HEAD
-=======
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -368,46 +366,10 @@
   <Group>
     <GroupName>MesDrivers</GroupName>
     <tvExp>1</tvExp>
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
     <File>
-<<<<<<< HEAD
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>1</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>.\Source\main.c</PathWithFileName>
-      <FilenameWithoutPath>main.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>1</GroupNumber>
-      <FileNumber>2</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\MesDrivers\Source\MyTimer.c</PathWithFileName>
-      <FilenameWithoutPath>MyTimer.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-  </Group>
-
-  <Group>
-    <GroupName>MesDrivers</GroupName>
-    <tvExp>1</tvExp>
-    <tvExpOptDlg>0</tvExpOptDlg>
-    <cbSel>0</cbSel>
-    <RteFlg>0</RteFlg>
-    <File>
-=======
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
       <GroupNumber>2</GroupNumber>
       <FileNumber>3</FileNumber>
       <FileType>5</FileType>

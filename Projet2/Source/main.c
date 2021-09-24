@@ -1,8 +1,6 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
 
-#include "stm32f10x.h"
-
 //on doit configurer le TIMER2 de période T = 500ms
 //pour cela, on doit trouver les valeurs de PSC et ARR
 
@@ -14,11 +12,12 @@
 #define PERIODE_TIM2 500
 #define TIMER TIM2
 #define PERIODE_CLK (1/72000)
-#define PSC 2
-#define ARR 11999999
+#define TIMER_PSC 1000
+#define TIMER_ARR 36000
 
 
-MyTimer_Struct_TypeDef * TIMER ;
+static MyTimer_Struct_TypeDef MyTimer ;
+
 
 int main(void) {
 	
@@ -26,12 +25,11 @@ int main(void) {
 	/*On initialise le timer ? 0 cette formule est vraie pour les timer 2 ? 7*/
 	RCC->APB1ENR |= (1<< 0);/*Le nombre de d?calage ccorrespond aux num de TIM -2*/
 
-	TIMER->PSC |= (1<< 2);
-	TIMER->ARR = 11999999; /**/
+	MyTimer.Timer = TIM4;
+	MyTimer_Base_Init(&MyTimer);
 
-	do{}while(1);
+	do{
 	
-	
-	
-	return 0;
+	}while(1);
+		
 }

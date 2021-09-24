@@ -3,47 +3,37 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.29.0.0
-Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: AHAMDY Jdihadi, INSA, LIC=----
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: CSN CSN, INSA de Toulouse, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain:       MDK-Lite  Version: 5.34.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.13.1
-Assembler:       Armasm.exe V6.13.1
-Linker/Locator:  ArmLink.exe V6.13.1
-Library Manager: ArmAr.exe V6.13.1
-Hex Converter:   FromElf.exe V6.13.1
-CPU DLL:         SARMCM3.DLL V5.29.0.0
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.34.0.0
 Dialog DLL:      DARMSTM.DLL V1.68.0.0
-Target DLL:      UL2CM3.DLL V1.163.0.0
+Target DLL:      UL2CM3.DLL V1.163.9.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-<<<<<<< HEAD
-C:\Users\jia-g\MPSTM32\InfoMat\Projet2\TIMER.uvprojx
-Project File Date:  09/24/2021
-
-<h2>Output:</h2>
-*** Using Compiler 'V6.13.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Simu'
-../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
-C:/Users/jia-g/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
-=======
 U:\4IR\micro mat STM32\Projet2\TIMER.uvprojx
 Project File Date:  09/24/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Simu'
-Source/main.c(1): warning: In file included from...
+../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
 C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
 C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(147): warning: In file included from...
 C:/Keil_v5/ARM/CMSIS/Include\core_cmInstr.h(435): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
   return(result);
   ~~~~~~ ^~~~~~
-Source/main.c(1): warning: In file included from...
+../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
 C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
 C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not defined, evaluates to 0 [-Wundef]
 #if (__CM3_REV < 0x0201)                   /* core r2p1 */
@@ -51,164 +41,37 @@ C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not define
 C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(1505): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
 {
 ^
-Source/main.c(19): error: expected ')'
-MyTimer_Struct_TypeDef * TIMER ;
-                         ^
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                          ^
-Source/main.c(19): note: to match this '('
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                             ^
-Source/main.c(19): error: expected ')'
-MyTimer_Struct_TypeDef * TIMER ;
-                         ^
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                             ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'TIM2_BASE'
-#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
-                               ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1287): note: expanded from macro 'APB1PERIPH_BASE'
-#define APB1PERIPH_BASE       PERIPH_BASE
-                              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1279): note: expanded from macro 'PERIPH_BASE'
-#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
-                                         ^
-Source/main.c(19): note: to match this '('
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                             ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'TIM2_BASE'
-#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
-                               ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1287): note: expanded from macro 'APB1PERIPH_BASE'
-#define APB1PERIPH_BASE       PERIPH_BASE
-                              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1279): note: expanded from macro 'PERIPH_BASE'
-#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
-                              ^
-Source/main.c(19): warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
-MyTimer_Struct_TypeDef * TIMER ;
-                         ^
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                             ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'TIM2_BASE'
-#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
-                               ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1287): note: expanded from macro 'APB1PERIPH_BASE'
-#define APB1PERIPH_BASE       PERIPH_BASE
-                              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1279): note: expanded from macro 'PERIPH_BASE'
-#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
-                                ^
-Source/main.c(19): warning: redundant parentheses surrounding declarator [-Wredundant-parens]
-MyTimer_Struct_TypeDef * TIMER ;
-                         ^~~~~
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^~~~
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                             ^~~~~~~~~
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'TIM2_BASE'
-#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
-                               ^~~~~~~~~~~~~~~
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1287): note: expanded from macro 'APB1PERIPH_BASE'
-#define APB1PERIPH_BASE       PERIPH_BASE
-                              ^~~~~~~~~~~
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1279): note: expanded from macro 'PERIPH_BASE'
-#define PERIPH_BASE           ((uint32_t)0x40000000) /*!< Peripheral base address in the alias region */
-                              ^~~~~~~~~~~~~~~~~~~~~~
-Source/main.c(19): error: expected ')'
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                             ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'TIM2_BASE'
-#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
-                                               ^
-Source/main.c(19): note: to match this '('
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                                             ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1291): note: expanded from macro 'TIM2_BASE'
-#define TIM2_BASE             (APB1PERIPH_BASE + 0x0000)
-                              ^
-Source/main.c(19): error: redefinition of 'TIM_TypeDef' as different kind of symbol
-MyTimer_Struct_TypeDef * TIMER ;
-                         ^
-Source/main.c(13): note: expanded from macro 'TIMER'
-#define TIMER TIM2
-              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1385): note: expanded from macro 'TIM2'
-#define TIM2                ((TIM_TypeDef *) TIM2_BASE)
-                              ^
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(1233): note: previous definition is here
-} TIM_TypeDef;
-  ^
-5 warnings and 4 errors generated.
-compiling main.c...
-../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(147): warning: In file included from...
-C:/Keil_v5/ARM/CMSIS/Include\core_cmInstr.h(435): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
-  return(result);
-  ~~~~~~ ^~~~~~
-../MesDrivers/Source/MyTimer.c(1): warning: In file included from...
-<<<<<<< HEAD
-C:/Users/jia-g/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
-=======
-C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not defined, evaluates to 0 [-Wundef]
-#if (__CM3_REV < 0x0201)                   /* core r2p1 */
-     ^
-C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(1505): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
-{
-^
-<<<<<<< HEAD
-../MesDrivers/Source/MyTimer.c(2): error: 'MyTimer.h' file not found
-#include "MyTimer.h"
-         ^~~~~~~~~~~
-3 warnings and 1 error generated.
-compiling MyTimer.c...
-compiling main.c...
-".\TIMER.axf" - 1 Error(s), 3 Warning(s).
-=======
-../MesDrivers/Source/MyTimer.c(4): warning: unused parameter 'Timer' [-Wunused-parameter]
-void MyTimer_Base_Init ( MyTimer_Struct_TypeDef*Timer )
+../MesDrivers/Source/MyTimer.c(6): error: use of undeclared identifier 'TIMER_ARR'
+        Timer->ARR = TIMER_ARR;
+                     ^
+../MesDrivers/Source/MyTimer.c(7): error: use of undeclared identifier 'TIMER_PSC'
+        Timer->PSC = TIMER_PSC;
+                     ^
+../MesDrivers/Source/MyTimer.c(10): warning: unused parameter 'Timer' [-Wunused-parameter]
+void MyTimer_Base_Start(MyTimer_Struct_TypeDef * Timer){
+                                                 ^
+../MesDrivers/Source/MyTimer.c(14): warning: unused parameter 'Timer' [-Wunused-parameter]
+void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer){
                                                 ^
-../MesDrivers/Source/MyTimer.c(7): warning: extra ';' outside of a function [-Wextra-semi]
-}       ;
-        ^
-5 warnings generated.
+5 warnings and 2 errors generated.
 compiling MyTimer.c...
-".\TIMER.axf" - 4 Error(s), 10 Warning(s).
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
+Source/main.c(1): warning: In file included from...
+C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(147): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cmInstr.h(435): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
+  return(result);
+  ~~~~~~ ^~~~~~
+Source/main.c(1): warning: In file included from...
+C:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include\stm32f10x.h(483): warning: In file included from...
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(412): warning: '__CM3_REV' is not defined, evaluates to 0 [-Wundef]
+#if (__CM3_REV < 0x0201)                   /* core r2p1 */
+     ^
+C:/Keil_v5/ARM/CMSIS/Include\core_cm3.h(1505): warning: function 'NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+3 warnings generated.
+compiling main.c...
+".\TIMER.axf" - 2 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -218,16 +81,11 @@ Package Vendor: Keil
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  .\RTE\_Simu
-  C:\Users\jia-g\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 Target not created.
-<<<<<<< HEAD
-Build Time Elapsed:  00:00:03
-=======
-Build Time Elapsed:  00:00:01
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

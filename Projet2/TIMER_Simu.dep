@@ -1,26 +1,19 @@
 Dependencies for Project 'TIMER', Target 'Simu': (DO NOT MODIFY !)
-<<<<<<< HEAD
-CompilerVersion: 6130001::V6.13.1::.\ARMCLANG
-F (.\Source\main.c)(0x614DB346)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Simu-IC:/Users/jia-g/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="529" -DSTM32F10X_MD-o ./main.o -MD)
-F (..\MesDrivers\Source\MyTimer.c)(0x614DB346)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Simu-IC:/Users/jia-g/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="529" -DSTM32F10X_MD-o ./mytimer.o -MD)
-F (..\MesDrivers\Include\MyTimer.h)(0x614DB346)()
-=======
 CompilerVersion: 6160000::V6.16::ARMCLANG
-F (.\Source\main.c)(0x614DB4DD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../MesDrivers/Include-IC:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="534" -DSTM32F10X_MD-o ./main.o -MD)
+F (.\Source\main.c)(0x614DBF25)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../MesDrivers/Include-IC:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="534" -DSTM32F10X_MD-o ./main.o -MD)
 I (C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58258CCC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559D3FFA)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x559D3FFA)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559D3FFA)
 I (C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58258CCC)
-I (..\MesDrivers\Include\MyTimer.h)(0x614DAE28)
-F (..\MesDrivers\Source\MyTimer.c)(0x614DB383)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../MesDrivers/Include-IC:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="534" -DSTM32F10X_MD-o ./mytimer.o -MD)
+I (..\MesDrivers\Include\MyTimer.h)(0x614DC09A)
+F (..\MesDrivers\Source\MyTimer.c)(0x614DC114)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../MesDrivers/Include-IC:/Programdata/Keil/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include-IC:/Keil_v5/ARM/CMSIS/Include-D__UVISION_VERSION="534" -DSTM32F10X_MD-o ./mytimer.o -MD)
 I (C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58258CCC)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x559D3FFA)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6035F908)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x559D3FFA)
 I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559D3FFA)
 I (C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58258CCC)
-I (..\MesDrivers\Include\MyTimer.h)(0x614DAE28)
-F (..\MesDrivers\Include\MyTimer.h)(0x614DAE28)()
->>>>>>> 0ab9e8d3acff603154c93c746540c7315aaae354
+I (..\MesDrivers\Include\MyTimer.h)(0x614DC09A)
+F (..\MesDrivers\Include\MyTimer.h)(0x614DC09A)()
