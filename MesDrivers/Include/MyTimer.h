@@ -2,13 +2,12 @@
 #define MYTIMER_H
 #include "stm32f10x.h"
 
-typedef struct
-{
-	TIM_TypeDef * Timer ; // TIM1 à TIM4
+typedef struct{
+	TIM_TypeDef *Timer; // TIM1 à TIM4
 	unsigned short ARR;
 	unsigned short PSC;
 	char Timer_num;
-} MyTimer_Struct_TypeDef ;
+}MyTimer_Struct_TypeDef;
 
 /*
 *****************************************************************************************
@@ -18,9 +17,9 @@ typedef struct
 *************************************************************************************************
 */
 
-void MyTimer_Base_Init (MyTimer_Struct_TypeDef * Timer) ;
-void MyTimer_Base_Start(MyTimer_Struct_TypeDef * Timer);
-void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer);
+void MyTimer_Base_Init (MyTimer_Struct_TypeDef *Timer) ;
+void MyTimer_Base_Start(MyTimer_Struct_TypeDef *Timer);
+void MyTimer_Base_Stop(MyTimer_Struct_TypeDef *Timer);
 
 
 /*

@@ -25,6 +25,12 @@ int main(void) {
 	/*On initialise le timer ? 0 cette formule est vraie pour les timer 2 ? 7*/
 	RCC->APB1ENR |= (1<< 0);/*Le nombre de d?calage ccorrespond aux num de TIM -2*/
 	
+	/*TEST en simulé pour mettre le clock a 0.5ms*/
+	/*
+	TIM2->CR1=0x01;
+	TIM2->ARR=0x2450;
+	TIM2->PSC=0x1770;
+	*/
 	
 	MyTimer.Timer = TIMER;
 	MyTimer.ARR = TIMER_ARR;
