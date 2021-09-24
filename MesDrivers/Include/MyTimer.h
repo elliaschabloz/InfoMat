@@ -3,7 +3,7 @@
 #include "stm32f10x.h"
 
 typedef struct{
-	TIM_TypeDef *Timer; // TIM1 à TIM4
+	TIM_TypeDef * Timer; // TIM1 à TIM4
 	unsigned short ARR;
 	unsigned short PSC;
 	char Timer_num;
