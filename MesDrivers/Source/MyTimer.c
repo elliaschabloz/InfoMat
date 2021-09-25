@@ -20,3 +20,24 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 	{
 		RCC->APB1ENR &= ~(1<<(Timer->Timer_num -2)); //disable du tim
 }
+	
+/*
+**************************************************************************************************
+* @brief
+* @param : - TIM_TypeDef * Timer : Timer conce rne
+- char Prio : de 0 a 15
+* @Note : La fonction MyTimer_Base_Init doit avoir ete lancee au prealable
+**************************************************************************************************
+*/
+void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio){
+
+}
+
+
+/*
+void TIM2_IRQHandler ( void )
+{
+***** completer avec le code de la routine du traitement de l’interruption 
+}
+
+*/
