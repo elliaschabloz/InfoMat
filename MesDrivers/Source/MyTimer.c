@@ -29,36 +29,31 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 * @Note : La fonction MyTimer_Base_Init doit avoir ete lancee au prealable
 **************************************************************************************************
 */
-void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio){
-	
-
+void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio){
+	uint16_t IRQn_Timer = 26+Timer->Timer_num;
+	/* On met le UIE à 1 */
+	Timer->Timer->DIER |= (1<<0);
+	NVIC->ISER[0] |= (1 << IRQn_Timer);
+	NVIC_SetPriority((IRQn_Type)IRQn_Timer,Prio);
 }
 
 
-/*
+
 void TIM2_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l’interruption 
+	
 }
 
 void TIM3_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l’interruption 
+
 }
 
 void TIM4_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l’interruption 
+ 
 }
 
-void TIM5_IRQHandler ( void )
-{
-***** completer avec le code de la routine du traitement de l’interruption 
-}
 
-void TIM6_IRQHandler ( void )
-{
-***** completer avec le code de la routine du traitement de l’interruption 
-}
 
-*/
+
