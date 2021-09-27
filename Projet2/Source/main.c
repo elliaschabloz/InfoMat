@@ -8,10 +8,10 @@
 // (ARR+1) = T_Timer / (T_Horloge * (PSC+1))
 
 // T_Horloge = 1/72 000 000 s = 1E-3 / (72 000 000*1E-3) s = 1 / 72 000  ms
-// T_Timer/T_Horloge = (PSC+1)*(ARR+1)
-// T_Timer/T_Horloge = 36 000 000
-// On fixe PSC et ARR tel que (PSC+1)*(ARR+1)= 36 000 000
-// Pour (PSC+1) =4000 =>3999 et (ARR+1= 9000)=> ARR=8999 
+// 500ms de période -> f=2Hz
+// PSC*ARR = 72M/2 = 36M
+//PSC = Partie entière supp( 36/2**16) ARR=Q(36/PSC)
+// PSC=1099 ARR=
 
 // Pour les variables PSC et ARR pensez à entrer les valeur en HEX dans le define
 
