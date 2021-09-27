@@ -32,33 +32,25 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio){
 	
 
+
 }
 
 
-/*
 void TIM2_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l段nterruption 
+	TIM2->DIER &= ~(1<<0);
+	
 }
 
 void TIM3_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l段nterruption 
+	TIM3->DIER &= ~(1<<0); 
+	
 }
 
 void TIM4_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l段nterruption 
+	TIM4->DIER &= ~(1<<0);
+	
 }
 
-void TIM5_IRQHandler ( void )
-{
-***** completer avec le code de la routine du traitement de l段nterruption 
-}
-
-void TIM6_IRQHandler ( void )
-{
-***** completer avec le code de la routine du traitement de l段nterruption 
-}
-
-*/
