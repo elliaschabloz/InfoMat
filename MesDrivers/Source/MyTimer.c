@@ -24,20 +24,61 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 /*
 **************************************************************************************************
 * @brief
-* @param : - TIM_TypeDef * Timer : Timer conce rne
+* @param : - TIM_TypeDef * Timer : Timer concerne
 - char Prio : de 0 a 15
 * @Note : La fonction MyTimer_Base_Init doit avoir ete lancee au prealable
 **************************************************************************************************
 */
+<<<<<<< HEAD
 void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio){
+	
+
 
 }
 
 
-/*
 void TIM2_IRQHandler ( void )
 {
-***** completer avec le code de la routine du traitement de l’interruption 
+	TIM2->DIER &= ~(1<<0);
+=======
+void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio){
+	uint16_t IRQn_Timer = 26+Timer->Timer_num;
+	/* On met le UIE à 1 */
+	Timer->Timer->DIER |= (1<<0);
+	NVIC->ISER[0] |= (1 << IRQn_Timer);
+	NVIC_SetPriority((IRQn_Type)IRQn_Timer,Prio);
 }
 
-*/
+
+
+void TIM2_IRQHandler ( void )
+{
+>>>>>>> 1f463fcef5360d45158b001dec6f1a664563ec45
+	
+}
+
+void TIM3_IRQHandler ( void )
+{
+<<<<<<< HEAD
+	TIM3->DIER &= ~(1<<0); 
+	
+=======
+
+>>>>>>> 1f463fcef5360d45158b001dec6f1a664563ec45
+}
+
+void TIM4_IRQHandler ( void )
+{
+<<<<<<< HEAD
+	TIM4->DIER &= ~(1<<0);
+	
+}
+
+=======
+ 
+}
+
+
+
+
+>>>>>>> 1f463fcef5360d45158b001dec6f1a664563ec45
