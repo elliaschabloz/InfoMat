@@ -13,7 +13,7 @@
 // On fixe PSC et ARR tel que (PSC+1)*(ARR+1)= 36 000 000
 // Pour (PSC+1) =4000 =>3999 et (ARR+1= 9000)=> ARR=8999 
 
-// Pour les variables PSC et ARR penser à entrer les valeur en HEX dans le define
+// Pour les variables PSC et ARR pensez à entrer les valeur en HEX dans le define
 
 #define PERIODE_TIM2 500
 #define MON_TIMER TIM2
@@ -30,8 +30,8 @@ int main(void) {
 	/*TEST en simulé pour mettre le clock a 0.5ms*/
 	/*
 	TIM2->CR1=0x01;
-	TIM2->ARR=0x2450;
-	TIM2->PSC=0x1770;
+	TIM2->ARR=0x2327;
+	TIM2->PSC=0x0F99;
 	*/
 	
 	MyTimer.Timer = MON_TIMER;
