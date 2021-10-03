@@ -30,8 +30,9 @@ int main(void) {
 	/*TEST en simulé pour mettre le clock a 0.5ms*/
 	/*
 	TIM2->CR1=0x01;
-	TIM2->ARR=0x2327;
-	TIM2->PSC=0x0F99;
+	TIM2->ARR=0xFFAE; // 65454
+	TIM2->PSC=0x0226; // 550
+	// Choix d'ARR pour une précision accrues
 	*/
 	
 	MyTimer.Timer = MON_TIMER;
