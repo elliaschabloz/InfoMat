@@ -30,7 +30,9 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef *Timer);
 **************************************************************************************************
 */
 void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer , char Prio);
-	
+void TIM2_IRQHandler ( void );
+void TIM3_IRQHandler ( void );
+void TIM4_IRQHandler ( void );
 
 /*
 #define MyTimer_Base_Start(Timer) ()

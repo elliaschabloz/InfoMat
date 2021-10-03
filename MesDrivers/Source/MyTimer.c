@@ -29,18 +29,9 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 * @Note : La fonction MyTimer_Base_Init doit avoir ete lancee au prealable
 **************************************************************************************************
 */
-<<<<<<< HEAD
-void MyTimer_ActiveIT ( TIM_TypeDef * Timer , char Prio){
-	
 
 
-}
 
-
-void TIM2_IRQHandler ( void )
-{
-	TIM2->DIER &= ~(1<<0);
-=======
 void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio){
 	uint16_t IRQn_Timer = 26+Timer->Timer_num;
 	/* On met le UIE à 1 */
@@ -50,35 +41,20 @@ void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio){
 }
 
 
-
 void TIM2_IRQHandler ( void )
 {
->>>>>>> 1f463fcef5360d45158b001dec6f1a664563ec45
-	
+	TIM2->DIER &= ~(1<<0);
 }
 
 void TIM3_IRQHandler ( void )
 {
-<<<<<<< HEAD
 	TIM3->DIER &= ~(1<<0); 
 	
-=======
-
->>>>>>> 1f463fcef5360d45158b001dec6f1a664563ec45
 }
 
 void TIM4_IRQHandler ( void )
 {
-<<<<<<< HEAD
 	TIM4->DIER &= ~(1<<0);
 	
 }
-
-=======
  
-}
-
-
-
-
->>>>>>> 1f463fcef5360d45158b001dec6f1a664563ec45
