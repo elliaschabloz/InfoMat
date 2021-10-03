@@ -27,15 +27,14 @@ Project File Date:  10/03/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Simu'
-compiling main.c...
-Source\main.c(3): error:  #5: cannot open source input file "MyGPIO.h": No such file or directory
-  #include "MyGPIO.h"
-Source\main.c: 0 warnings, 1 error
 compiling Driver_GPIO.c...
-assembling startup_stm32f10x_md.s...
+compiling main.c...
 compiling MyTimer.c...
+assembling startup_stm32f10x_md.s...
 compiling system_stm32f10x.c...
-".\Objects\TIMER_Simule.axf" - 1 Error(s), 0 Warning(s).
+linking...
+Program Size: Code=912 RO-data=252 RW-data=0 ZI-data=1040  
+".\Objects\TIMER_Simule.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -66,7 +65,6 @@ Package Vendor: Keil
       Source file:   Device\Source\system_stm32f10x.c
       Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Include file:  RTE_Driver\Config\RTE_Device.h
-Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

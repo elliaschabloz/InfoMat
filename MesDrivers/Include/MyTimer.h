@@ -29,7 +29,7 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef *Timer);
 * @Note : La fonction MyTimer_Base_Init doit avoir ete lancee au prealable
 **************************************************************************************************
 */
-void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer , char Prio);
+void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer , char Prio, void(*IT_function) (void));
 void TIM2_IRQHandler ( void );
 void TIM3_IRQHandler ( void );
 void TIM4_IRQHandler ( void );

@@ -30,11 +30,12 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 **************************************************************************************************
 */
 
-void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio){
+void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio, void(*IT_function) (void)){
 	uint16_t IRQn_Timer = 26+Timer->Timer_num;
 	/* On met le UIE à 1 */
 	NVIC->ISER[0] |= (1 << IRQn_Timer);
 	NVIC_SetPriority((IRQn_Type)IRQn_Timer,Prio);
+	IT_function();
 	Timer->Timer->DIER |= (1<<0);
 }
 
