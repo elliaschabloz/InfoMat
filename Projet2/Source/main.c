@@ -1,6 +1,6 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
-//#include "MyGPIO.h"
+#include "Driver_GPIO.h"
 
 //on doit configurer le TIMER2 de période T_Timer = 500ms
 //pour cela, on doit trouver les valeurs de PSC et ARR

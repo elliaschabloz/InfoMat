@@ -393,6 +393,11 @@
               <FileType>1</FileType>
               <FilePath>..\MesDrivers\Source\MyTimer.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\Driver_GPIO.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -792,6 +797,11 @@
               <FileName>MyTimer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MesDrivers\Source\MyTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\Driver_GPIO.c</FilePath>
             </File>
           </Files>
         </Group>
