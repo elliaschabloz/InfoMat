@@ -133,7 +133,7 @@ Removing Unused input sections from the image.
     Removing mytimer.o(.rev16_text), (4 bytes).
     Removing mytimer.o(.revsh_text), (4 bytes).
     Removing mytimer.o(.rrx_text), (6 bytes).
-    Removing mytimer.o(i.MyTimer_ActiveIT), (80 bytes).
+    Removing mytimer.o(i.MyTimer_ActiveIT), (88 bytes).
     Removing mytimer.o(i.MyTimer_Base_Init), (24 bytes).
     Removing mytimer.o(i.MyTimer_Base_Stop), (24 bytes).
     Removing system_stm32f10x.o(.rev16_text), (4 bytes).
@@ -142,7 +142,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f10x.o(i.SystemCoreClockUpdate), (164 bytes).
     Removing system_stm32f10x.o(.data), (20 bytes).
 
-14 unused section(s) (total 354 bytes) removed from the image.
+14 unused section(s) (total 362 bytes) removed from the image.
 
 ==============================================================================
 
