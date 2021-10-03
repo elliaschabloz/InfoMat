@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
+//#include "MyGPIO.h"
 
 //on doit configurer le TIMER2 de période T_Timer = 500ms
 //pour cela, on doit trouver les valeurs de PSC et ARR
@@ -23,7 +24,10 @@
 
 
 MyTimer_Struct_TypeDef MyTimer;
-
+void Callback(void){
+	/* init la broche de la led
+	et toggle la led */
+}
 
 int main(void) {
 	
@@ -47,5 +51,6 @@ int main(void) {
 	MyTimer_Base_Start(&MyTimer);
 
 	do{
+		MyTimer_ActiveIT(&MyTimer, 5);
 	}while(1);	
 }
