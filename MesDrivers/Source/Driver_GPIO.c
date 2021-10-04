@@ -26,7 +26,7 @@ void MyGPIO_Reset ( GPIO_TypeDef * GPIO , char GPIO_Pin ){
 } ;
 
 void MyGPIO_Toggle ( GPIO_TypeDef * GPIO , char GPIO_Pin ){
-		if ((GPIO->ODR |= ~(0x1 << GPIO_Pin)) == GPIO->ODR) { //si rien ne change, on avait un zero
+		if (!(GPIO->ODR & (1<<GPIO_Pin))) { //si rien ne change, on avait un zero
 			MyGPIO_Set(GPIO, GPIO_Pin);																 //donc on met un 1
-		} else MyGPIO_Reset(GPIO, GPIO_Pin);														 // sinon on met un 0
+		} else {MyGPIO_Reset(GPIO, GPIO_Pin);};														 // sinon on met un 0
 }	;
