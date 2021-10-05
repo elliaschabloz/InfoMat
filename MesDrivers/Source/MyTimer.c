@@ -76,3 +76,32 @@ void TIM4_IRQHandler ( void )
 	tim4_function();
 }
  
+void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
+	//Mode 1 -> OCxM bit = 110 in CCMRx
+	switch (Channel) {
+		case 1:
+			Timer->CCMR1 = TIM_CCMR1_OC1M_2;
+			Timer->CCMR1 = TIM_CCMR1_OC1M_1;
+			Timer->CCMR1 = ~TIM_CCMR1_OC1M_0;
+			
+			Timer->CCER = TIM_CCER_CC1E;
+			break;
+		case 2:
+			Timer->CCMR1 = TIM_CCMR1_OC2M_2;
+			Timer->CCMR1 = TIM_CCMR1_OC2M_1;
+			Timer->CCMR1 = ~TIM_CCMR1_OC2M_0;
+			
+			Timer->CCER = TIM_CCER_CC1E;
+			break;
+		case 3:
+			Timer->CCMR1 = TIM_CCMR1_OC1M_2;
+			Timer->CCMR1 = TIM_CCMR1_OC1M_1;
+			Timer->CCMR1 = ~TIM_CCMR1_OC1M_0;
+			
+			Timer->CCER = TIM_CCER_CC1E;
+			break;
+		default:
+			break;
+	}
+}
+

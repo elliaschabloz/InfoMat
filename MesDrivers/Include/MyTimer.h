@@ -34,6 +34,11 @@ void TIM2_IRQHandler ( void );
 void TIM3_IRQHandler ( void );
 void TIM4_IRQHandler ( void );
 
+
+void MyTimer_PWM(TIM_TypeDef * Timer, char Channel);
+void PWM_RapportCyclique(int alpha);
+
+	
 /*
 #define MyTimer_Base_Start(Timer) ()
 #define MyTimer_Base_Stop(Timer) ()
