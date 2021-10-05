@@ -94,14 +94,24 @@ void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
 			Timer->CCER = TIM_CCER_CC1E;
 			break;
 		case 3:
-			Timer->CCMR1 = TIM_CCMR1_OC1M_2;
-			Timer->CCMR1 = TIM_CCMR1_OC1M_1;
-			Timer->CCMR1 = ~TIM_CCMR1_OC1M_0;
+			Timer->CCMR2 = TIM_CCMR2_OC3M_2;
+			Timer->CCMR2 = TIM_CCMR2_OC3M_1;
+			Timer->CCMR2 = ~TIM_CCMR2_OC3M_0;
 			
 			Timer->CCER = TIM_CCER_CC1E;
 			break;
+		case 4:
+			Timer->CCMR2 = TIM_CCMR2_OC4M_2;
+			Timer->CCMR2 = TIM_CCMR2_OC4M_1;
+			Timer->CCMR2 = ~TIM_CCMR2_OC4M_0;
+			
+			Timer->CCER = TIM_CCER_CC1E;
 		default:
 			break;
 	}
+}
+
+void PWM_RapportCyclique(int alpha){
+	
 }
 
