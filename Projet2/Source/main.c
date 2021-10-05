@@ -28,8 +28,8 @@ void Callback(void){
 	/* init la broche de la led
 	et toggle la led */
 	MyGPIO_Struct_TypeDef LED;
-	LED.GPIO = GPIOB;
-	LED.GPIO_Pin = 0;	
+	LED.GPIO = GPIOA;
+	LED.GPIO_Pin = 5;	
 	LED.GPIO_Conf =	Out_Ppull;
 	MyGPIO_Init(&LED);
 	MyGPIO_Toggle(LED.GPIO, LED.GPIO_Pin);
@@ -55,8 +55,8 @@ int main(void) {
 	// Je pense qu'ils sont contradictoir je lis la doc puis je verrais une soluce
 	
 	MyTimer_Base_Start(&MyTimer);
-
+	MyTimer_ActiveIT(&MyTimer, 5, &Callback);
 	do{
-		MyTimer_ActiveIT(&MyTimer, 5, Callback);
+	
 	}while(1);	
 }

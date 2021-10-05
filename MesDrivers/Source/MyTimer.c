@@ -1,6 +1,10 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
 
+static void( *tim2_function) (void);
+static void( *tim3_function) (void);
+static void( *tim4_function) (void);
+
 void MyTimer_Base_Init (MyTimer_Struct_TypeDef * MyTimer)
 {	
 	RCC->APB1RSTR |= (1<< (MyTimer->Timer_num -2));  // reset du timer
@@ -36,24 +40,39 @@ void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio, void(*IT_func
 	NVIC->ISER[0] |= (1 << IRQn_Timer);
 	NVIC_SetPriority((IRQn_Type)IRQn_Timer,Prio);
 	IT_function();
+	switch (Timer->Timer_num){
+		case 2:
+			tim2_function = IT_function;
+			break;
+		case 3:
+			tim3_function = IT_function;
+			break;
+		case 4:
+			tim4_function = IT_function;
+			break;
+		default:
+			break;
+	}
 	Timer->Timer->DIER |= (1<<0);
 }
 
 
 void TIM2_IRQHandler ( void )
 {
-	TIM2->DIER &= ~(1<<0);
+	TIM2->SR &= ~TIM_SR_UIF;
+	tim2_function();
+	
 }
 
 void TIM3_IRQHandler ( void )
 {
-	TIM3->DIER &= ~(1<<0); 
-	
+	TIM3->SR &= ~TIM_SR_UIF;
+	tim3_function();
 }
 
 void TIM4_IRQHandler ( void )
 {
-	TIM4->DIER &= ~(1<<0);
-	
+	TIM4->SR &= ~TIM_SR_UIF;
+	tim4_function();
 }
  
