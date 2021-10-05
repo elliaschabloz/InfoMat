@@ -36,7 +36,8 @@ void TIM4_IRQHandler ( void );
 
 
 void MyTimer_PWM(TIM_TypeDef * Timer, char Channel);
-void PWM_RapportCyclique(int alpha);
+void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha);
+void PWM_Port_Init(int Timer_number, char Channel);
 
 	
 /*

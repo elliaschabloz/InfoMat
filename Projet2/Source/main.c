@@ -55,7 +55,8 @@ int main(void) {
 	// Je pense qu'ils sont contradictoir je lis la doc puis je verrais une soluce
 	
 	MyTimer_Base_Start(&MyTimer);
-	MyTimer_ActiveIT(&MyTimer, 5, &Callback);
+	//MyTimer_PWM(TIM_TypeDef * Timer, char Channel)
+	//MyTimer_ActiveIT(&MyTimer, 5, &Callback);
 	do{
 	
 	}while(1);	
