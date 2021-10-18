@@ -33,7 +33,7 @@ void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer , char Prio, void(*IT_fun
 void TIM2_IRQHandler ( void );
 void TIM3_IRQHandler ( void );
 void TIM4_IRQHandler ( void );
-
+void MyTimer_Encoder_Init(TIM_TypeDef * Timer);
 
 void MyTimer_PWM(TIM_TypeDef * Timer, char Channel);
 void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha);
