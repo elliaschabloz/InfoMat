@@ -39,6 +39,9 @@ void MyTimer_PWM(TIM_TypeDef * Timer, char Channel);
 void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha);
 void PWM_Port_Init(int Timer_number, char Channel);
 
+void MyZero_ActiveIT(char Prio);
+void EXTI0_IRQHandler (void);
+
 	
 /*
 #define MyTimer_Base_Start(Timer) ()

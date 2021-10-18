@@ -15,7 +15,7 @@ typedef struct
 
 #define In_Floating (4)
 #define In_PullDown (8)
-#define In _PullUp (8)
+#define In_PullUp (8)
 #define In_Analog (0)
 #define Out_Ppull (2) 
 #define Out_OD (6)

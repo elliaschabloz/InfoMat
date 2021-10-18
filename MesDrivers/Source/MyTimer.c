@@ -15,16 +15,15 @@ static void( *tim4_function) (void);
 void MyTimer_Base_Init (MyTimer_Struct_TypeDef * MyTimer)
 {	
 	RCC->APB1RSTR |= (1<< (MyTimer->Timer_num -2));  // reset du timer
+	RCC->APB1ENR |= (1<<(MyTimer->Timer_num -2));		//enable du tim
+	MyTimer->Timer->ARR=MyTimer->ARR;
+	MyTimer->Timer->PSC=MyTimer->PSC;
 }
 
 void MyTimer_Base_Start(MyTimer_Struct_TypeDef * MyTimer)
 	{
-		RCC->APB1ENR |= (1<<(MyTimer->Timer_num -2));		//enable du tim
-		//On initialise les registre ARR et PSC selon nos paramètres
-		//Et on active le clock register 
-		MyTimer->Timer->CR1=0x01;
-		MyTimer->Timer->ARR=MyTimer->ARR;
-		MyTimer->Timer->PSC=MyTimer->PSC;
+		//On active le clock register 
+		MyTimer->Timer->CR1 |= TIM_CR1_CEN;		
 	}
 
 void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
@@ -43,8 +42,7 @@ void MyTimer_Base_Stop(MyTimer_Struct_TypeDef * Timer)
 
 void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio, void(*IT_function) (void)){
 	uint16_t IRQn_Timer = 26+Timer->Timer_num;
-	/* On met le UIE à 1 */
-	NVIC->ISER[0] |= (1 << IRQn_Timer);
+	NVIC->ISER[0] |= (1 << IRQn_Timer); //activation IT NVIC
 	NVIC_SetPriority((IRQn_Type)IRQn_Timer,Prio);
 	IT_function();
 	switch (Timer->Timer_num){
@@ -58,7 +56,27 @@ void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio, void(*IT_func
 			tim4_function = IT_function;
 			break;
 	}
-	Timer->Timer->DIER |= (1<<0);
+	Timer->Timer->DIER |= TIM_DIER_UIE; //activation IT NVIC
+}
+
+
+void MyZero_ActiveIT(char Prio){
+	//pin=PA0 -> EXTI0
+
+	EXTI->IMR = EXTI_IMR_MR0; 
+	EXTI->RTSR = EXTI_RTSR_TR0;
+	EXTI->FTSR = EXTI_FTSR_TR0;
+	NVIC_SetPendingIRQ(EXTI0_IRQn);
+	NVIC->ISER[0] |= (1 << EXTI0_IRQn);
+	NVIC_SetPriority(EXTI0_IRQn,Prio);
+	
+	
+}
+
+void EXTI0_IRQHandler (void)
+{
+	TIM3->CNT &= 0;
+	TIM3->SR &= ~TIM_SR_UIF;
 }
 
 
@@ -66,6 +84,7 @@ void TIM2_IRQHandler ( void )
 {
 	TIM2->SR &= ~TIM_SR_UIF;
 	tim2_function();
+	
 	
 }
 
@@ -120,6 +139,7 @@ void PWM_Port_Init(int Timer_number, char Channel){
 void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha){
 	// A voir si Le C fait la multiplication int hex et return un hex 
 	// printf("%d",alpha*Timer->ARR);
+	
 }
 
 void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
@@ -154,6 +174,6 @@ void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
 			Timer->CCER = TIM_CCER_CC4E;
 			break;		
 	}
-	// Il est censé prendre en argument le tim mais soucis avec les type TIM à revoir
-	PWM_Port_Init(2,Channel);
 }
+	// Il est censé prendre en argument le tim mais soucis avec les type TIM à revoir
+

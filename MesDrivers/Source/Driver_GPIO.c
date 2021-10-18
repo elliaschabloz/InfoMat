@@ -19,11 +19,13 @@ int MyGPIO_Read ( GPIO_TypeDef * GPIO , char GPIO_Pin ) {
 }; // renvoie 0 ou autre chose different de 0
 
 void MyGPIO_Set ( GPIO_TypeDef * GPIO , char GPIO_Pin ) {
-		GPIO -> ODR |= (0x01 << GPIO_Pin);
+		//GPIO -> ODR |= (0x01 << GPIO_Pin);
+		GPIO->BSRR |= (0x01 << GPIO_Pin);
 };
 
 void MyGPIO_Reset ( GPIO_TypeDef * GPIO , char GPIO_Pin ){
-		GPIO -> ODR &= ~(0x01 << GPIO_Pin);
+		//GPIO -> ODR &= ~(0x01 << GPIO_Pin);
+		GPIO->BSRR |= (0x01 << (16+GPIO_Pin));
 } ;
 
 void MyGPIO_Toggle ( GPIO_TypeDef * GPIO , char GPIO_Pin ){
