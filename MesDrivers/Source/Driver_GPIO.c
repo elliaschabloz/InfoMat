@@ -2,7 +2,6 @@
 #include "Driver_GPIO.h"
 
 void MyGPIO_Init ( MyGPIO_Struct_TypeDef * GPIOStructPtr) {
-			RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4);
 		//verifier si CRL ou CRH
 			if((*GPIOStructPtr).GPIO_Pin <=7) { //si Pin<7 alors CRL sinon CRH
 					(*GPIOStructPtr).GPIO->CRL &= ~(0xF << (*GPIOStructPtr).GPIO_Pin*4);
