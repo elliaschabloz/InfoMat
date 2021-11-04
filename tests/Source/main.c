@@ -35,8 +35,8 @@ void Init_CHB(void){ //TIM3_CH2=PA7
 }
 
 int main(void) {
-	RCC->APB2ENR |= (0x01 << 2) | (0x01 << 3) | (0x01 << 4) ; //Clock Enable
-	
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN ; // Broches girouettes sur GPIOA
+	//RCC->APB1ENR |= RCC_APB1ENR_TIM3EN ;
 	MyTimer.Timer = MON_TIMER;
 	MyTimer.ARR = TIMER_ARR;
 	MyTimer.Timer_num = 3;
