@@ -144,9 +144,7 @@ void PWM_Port_Init(int Timer_number, char Channel){
 }
  
 void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha){
-	// A voir si Le C fait la multiplication int hex et return un hex 
-	// printf("%d",alpha*Timer->ARR);
-	
+	Timer->CCR1 = alpha;	
 }
 
 void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
