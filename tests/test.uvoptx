@@ -224,7 +224,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\micro_mat_STM32\MesDrivers\Source\Driver_GPIO.c</PathWithFileName>
+      <PathWithFileName>..\MesDrivers\Source\Driver_GPIO.c</PathWithFileName>
       <FilenameWithoutPath>Driver_GPIO.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -236,7 +236,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\micro_mat_STM32\MesDrivers\Source\MyTimer.c</PathWithFileName>
+      <PathWithFileName>..\MesDrivers\Source\MyTimer.c</PathWithFileName>
       <FilenameWithoutPath>MyTimer.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
