@@ -14,7 +14,7 @@ static void( *tim4_function) (void);
 
 void MyTimer_Base_Init (MyTimer_Struct_TypeDef * MyTimer)
 {	
-	RCC->APB1RSTR |= (1<< (MyTimer->Timer_num -2));  // reset du timer
+	//RCC->APB1RSTR |= (1<< (MyTimer->Timer_num -2));  // reset du timer
 	RCC->APB1ENR |= (1<<(MyTimer->Timer_num -2));		//enable du tim
 	MyTimer->Timer->ARR=MyTimer->ARR;
 	MyTimer->Timer->PSC=MyTimer->PSC;
