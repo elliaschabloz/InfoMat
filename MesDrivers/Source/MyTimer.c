@@ -109,7 +109,7 @@ void TIM4_IRQHandler ( void )
 	
 
 //On initialise le port associé aux channel choisi
-void PWM_Port_Init(int Timer_number, char Channel){
+void PWM_Port_Init(int Timer_number, int Channel){
 	MyGPIO_Struct_TypeDef PWM_Output;
 	switch (Timer_number) {
 		case 1:
@@ -147,7 +147,7 @@ void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha){
 	Timer->CCR1 = alpha;	
 }
 
-void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
+void MyTimer_PWM(TIM_TypeDef * Timer, int Channel){
 	//Mode 1 -> OCxM bit = 110 in CCMRx
 	switch (Channel) {
 		case 1:

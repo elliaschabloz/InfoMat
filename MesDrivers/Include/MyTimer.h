@@ -35,9 +35,9 @@ void TIM3_IRQHandler ( void );
 void TIM4_IRQHandler ( void );
 void MyTimer_Encoder_Init(TIM_TypeDef * Timer);
 
-void MyTimer_PWM(TIM_TypeDef * Timer, char Channel);
+void MyTimer_PWM(TIM_TypeDef * Timer, int Channel);
 void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha);
-void PWM_Port_Init(int Timer_number, char Channel);
+void PWM_Port_Init(int Timer_number, int Channel);
 
 void MyZero_ActiveIT(char Prio);
 void EXTI0_IRQHandler (void);
