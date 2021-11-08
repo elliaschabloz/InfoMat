@@ -3,6 +3,9 @@
 #include "Driver_GPIO.h"
 
 
+#define TIMER_ARR 65000
+#define TIMER_PSC 22
+
 MyTimer_Struct_TypeDef MyTimer;
 
 
@@ -12,14 +15,25 @@ void Callback(void){
 
 
 int main(void) {
+	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
+	MyTimer.Timer = TIM3;
+	MyTimer.ARR = TIMER_ARR;
+	MyTimer.PSC = TIMER_PSC;
+	MyTimer.Timer_num = 3;
 	
-	PWM_Port_Init(2, 3);
+	MyTimer_Base_Init(&MyTimer);
+	MyTimer_Base_Start(&MyTimer);
+	PWM_Port_Init(3, 3);
+	
+	
 	MyTimer_PWM(MyTimer.Timer, 3);
 	
-	PWM_RapportCyclique(MyTimer.Timer, 30);
+	
 	
 	do{
-		PWM_RapportCyclique(MyTimer.Timer, 30);
-		PWM_RapportCyclique(MyTimer.Timer, 0);
+		PWM_RapportCyclique(MyTimer.Timer, 3600);
+		PWM_RapportCyclique(MyTimer.Timer, 4500);
+		PWM_RapportCyclique(MyTimer.Timer, 6400);
+		
 	}while(1);	
 }
