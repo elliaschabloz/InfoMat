@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'servo' 
- * Target:  'Reel' 
+ * Project: 'BordageAuto' 
+ * Target:  'Simu' 
  */
 
 #ifndef RTE_COMPONENTS_H
