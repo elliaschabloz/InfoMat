@@ -3,9 +3,10 @@
 #include "Driver_GPIO.h"
 
 
-#define TIMER_ARR 65000
-#define TIMER_PSC 22
+#define TIMER_ARR 59999
+#define TIMER_PSC 24
 
+//CNT2 = (340/9)*(CNT/6 - 30) + 3400
 MyTimer_Struct_TypeDef MyTimer;
 
 
@@ -31,9 +32,9 @@ int main(void) {
 	
 	
 	do{
-		PWM_RapportCyclique(MyTimer.Timer, 3600);
+		//PWM_RapportCyclique(MyTimer.Timer, 3600);
 		PWM_RapportCyclique(MyTimer.Timer, 4500);
-		PWM_RapportCyclique(MyTimer.Timer, 6400);
+		//PWM_RapportCyclique(MyTimer.Timer, 6400);
 		
 	}while(1);	
 }
