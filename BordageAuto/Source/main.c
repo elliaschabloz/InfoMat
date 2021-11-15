@@ -9,7 +9,7 @@
 #define GIROUETTE_ARR 0x5A0 //360*4=1440
 
 
-#define TIMER_PWM  //On doit choisir un timer différent de celui utilisé pour la girouette 
+#define TIMER_PWM TIM4 //On doit choisir un timer différent de celui utilisé pour la girouette 
 #define PWM_ARR 59999  // Valeurs choisis pour maximiser la précision 
 #define PWM_PSC 24
 
@@ -17,7 +17,7 @@
 //declaration de nos tymer girouette(GRT) et PWM
 
 MyTimer_Struct_TypeDef MyTimer_GRT; 
-//MyTimer_Struct_TypeDef MyTimer_PWM;
+MyTimer_Struct_TypeDef MyTimerPWM;
 
 void Callback(void){
 }
@@ -63,29 +63,24 @@ int main(void) {
 	MyTimer_Encoder_Init(TIMER_GIROUETTE);
 	MyZero_ActiveIT(5);
 
-	PWM_Port_Init(3, 3);
+	
+	MyTimerPWM.Timer = TIM4;
+	MyTimerPWM.ARR = PWM_ARR;
+	MyTimerPWM.PSC = PWM_PSC;
+	MyTimerPWM.Timer_num = 4;
+	
+	MyTimer_Base_Init(&MyTimerPWM);
+	MyTimer_Base_Start(&MyTimerPWM);
+	
+	PWM_Port_Init(4, 1);
 	
 	
-	MyTimer_PWM(MyTimer_GRT.Timer, 3);
+	MyTimer_PWM(MyTimerPWM.Timer, 1);
 	
-	//RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
-	//MyTimer_PWM.Timer = TIM3;
-	//MyTimer_PWM.ARR = PWM_ARR;
-	//MyTimer_PWM.PSC = PWM_PSC;
-	//MyTimer_PWM.Timer_num = 3;
-	
-	//MyTimer_Base_Init(&MyTimer_PWM);
-	//MyTimer_Base_Start(&MyTimer_PWM);
-	//PWM_Port_Init(3, 3);
-	
-	
-	//MyTimer_PWM(MyTimer_PWM.Timer, 3);
-	
-	//PWM_RapportCyclique(MyTimer.Timer, 3600); // ARR pour obtenir 90°
-	//PWM_RapportCyclique(MyTimer.Timer, 4500);
-	//PWM_RapportCyclique(MyTimer.Timer, 6400);	// ARR pour obtenir 0°
 	
 	do{
-		angle_servo(MyTimer_GRT.Timer->CCR3, MyTimer_GRT.Timer);
+		//PWM_RapportCyclique(MyTimerPWM.Timer, 3000);
+		//angle_servo(316, MyTimerPWM.Timer);
+		angle_servo(MyTimer_GRT.Timer->CNT/4, MyTimerPWM.Timer);
 	}while(1);	
 }

@@ -17,24 +17,24 @@ void Callback(void){
 
 int main(void) {
 	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
-	MyTimer.Timer = TIM3;
+	MyTimer.Timer = TIM4;
 	MyTimer.ARR = TIMER_ARR;
 	MyTimer.PSC = TIMER_PSC;
-	MyTimer.Timer_num = 3;
+	MyTimer.Timer_num = 4;
 	
 	MyTimer_Base_Init(&MyTimer);
 	MyTimer_Base_Start(&MyTimer);
-	PWM_Port_Init(3, 3);
+	PWM_Port_Init(4, 1);
 	
 	
-	MyTimer_PWM(MyTimer.Timer, 3);
+	MyTimer_PWM(MyTimer.Timer, 1);
 	
 	
 	
 	do{
-		//PWM_RapportCyclique(MyTimer.Timer, 3000);
+		//PWM_RapportCyclique(MyTimer.Timer, 6000);
 		//angle_servo(180, MyTimer.Timer);
-		angle_servo(90, MyTimer.Timer);
+		angle_servo(180, MyTimer.Timer);
 		
 	}while(1);	
 }

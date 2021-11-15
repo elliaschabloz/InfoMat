@@ -144,7 +144,7 @@ void PWM_Port_Init(int Timer_number, int Channel){
 }
  
 void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha){
-	Timer->CCR3 = alpha;	
+	Timer->CCR1 = alpha;	
 }
 
 void MyTimer_PWM(TIM_TypeDef * Timer, int Channel){
