@@ -1,6 +1,7 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
+#include "Servo.h"
 
 //Pour l'instant j'ai pris comme base girouette et rajouter la partis servo en commentaire
 
@@ -9,8 +10,8 @@
 
 
 #define TIMER_PWM  //On doit choisir un timer différent de celui utilisé pour la girouette 
-#define PWM_ARR 65000  // Valeurs choisis pour maximiser la précision 
-#define PWM_PSC 22
+#define PWM_ARR 59999  // Valeurs choisis pour maximiser la précision 
+#define PWM_PSC 24
 
 
 //declaration de nos tymer girouette(GRT) et PWM
@@ -47,7 +48,7 @@ void Init_CHB(void){ //TIM3_CH2=PA7
 }
 
 int main(void) {
-	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN ; // Broches girouettes sur GPIOA & GPIOB
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN ; // Broches girouettes sur GPIOA & GPIOB
 	//RCC->APB1ENR |= RCC_APB1ENR_TIM3EN ;
 	MyTimer_GRT.Timer = TIMER_GIROUETTE;
 	MyTimer_GRT.ARR = GIROUETTE_ARR;
@@ -62,7 +63,10 @@ int main(void) {
 	MyTimer_Encoder_Init(TIMER_GIROUETTE);
 	MyZero_ActiveIT(5);
 
+	PWM_Port_Init(3, 3);
 	
+	
+	MyTimer_PWM(MyTimer_GRT.Timer, 3);
 	
 	//RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
 	//MyTimer_PWM.Timer = TIM3;
@@ -82,6 +86,6 @@ int main(void) {
 	//PWM_RapportCyclique(MyTimer.Timer, 6400);	// ARR pour obtenir 0°
 	
 	do{
-	
+		angle_servo(MyTimer_GRT.Timer->CCR3, MyTimer_GRT.Timer);
 	}while(1);	
 }
