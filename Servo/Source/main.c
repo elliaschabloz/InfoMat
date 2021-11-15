@@ -1,7 +1,7 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
-
+#include "Servo.h"
 
 #define TIMER_ARR 59999
 #define TIMER_PSC 24
@@ -32,9 +32,9 @@ int main(void) {
 	
 	
 	do{
-		//PWM_RapportCyclique(MyTimer.Timer, 3600);
-		PWM_RapportCyclique(MyTimer.Timer, 4500);
-		//PWM_RapportCyclique(MyTimer.Timer, 6400);
+		//PWM_RapportCyclique(MyTimer.Timer, 3000);
+		//angle_servo(180, MyTimer.Timer);
+		angle_servo(90, MyTimer.Timer);
 		
 	}while(1);	
 }
