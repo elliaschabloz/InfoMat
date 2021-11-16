@@ -4,7 +4,7 @@
 
 short TIMER1_TAB_CH[4] = {8,9,10,11}; // GPIOA
 short TIMER2_TAB_CH[4] = {0,1,2,3};		//GPIOA
-short TIMER3_TAB_CH[4] = {6,7,0,1};		// GPIOA pui GPIOB
+short TIMER3_TAB_CH[4] = {6,7,0,1};		// GPIOA puis GPIOB
 short TIMER4_TAB_CH[4] = {6,7,8,9};		//GPIOB
 
 
@@ -14,7 +14,6 @@ static void( *tim4_function) (void);
 
 void MyTimer_Base_Init (MyTimer_Struct_TypeDef * MyTimer)
 {	
-	//RCC->APB1RSTR |= (1<< (MyTimer->Timer_num -2));  // reset du timer
 	RCC->APB1ENR |= (1<<(MyTimer->Timer_num -2));		//enable du tim
 	MyTimer->Timer->ARR=MyTimer->ARR;
 	MyTimer->Timer->PSC=MyTimer->PSC;
