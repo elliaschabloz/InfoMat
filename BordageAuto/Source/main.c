@@ -16,9 +16,9 @@
 MyTimer_Struct_TypeDef MyTimer_GRT; 
 MyTimer_Struct_TypeDef MyTimerPWM;
 
-////////////////////////////
-//Initialisation des GPIOs//
-////////////////////////////
+//////////////////////////////
+//Fonctions d'initialisation//
+//////////////////////////////
 void Init_ZERO(void){ //Zero
 	//GPIOA0
 	MyGPIO_Struct_TypeDef ZERO;
