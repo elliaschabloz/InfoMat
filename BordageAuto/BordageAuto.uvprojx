@@ -408,6 +408,16 @@
               <FileType>1</FileType>
               <FilePath>..\MesDrivers\Source\Servo.c</FilePath>
             </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>Encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\Encoder.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -819,6 +829,16 @@
               <FileName>Servo.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MesDrivers\Source\Servo.c</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>Encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MesDrivers\Source\Encoder.c</FilePath>
             </File>
           </Files>
         </Group>

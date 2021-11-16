@@ -2,11 +2,6 @@
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
 
-short TIMER1_TAB_CH[4] = {8,9,10,11}; // GPIOA
-short TIMER2_TAB_CH[4] = {0,1,2,3};		//GPIOA
-short TIMER3_TAB_CH[4] = {6,7,0,1};		// GPIOA puis GPIOB
-short TIMER4_TAB_CH[4] = {6,7,8,9};		//GPIOB
-
 
 static void( *tim2_function) (void);
 static void( *tim3_function) (void);
@@ -59,33 +54,6 @@ void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer, char Prio, void(*IT_func
 }
 
 
-void MyZero_ActiveIT(char Prio){
-	//pin=PA0 -> EXTI0
-
-	EXTI->IMR = EXTI_IMR_MR0; 
-	EXTI->RTSR = EXTI_RTSR_TR0;
-	EXTI->FTSR = EXTI_FTSR_TR0;
-	//NVIC_SetPendingIRQ(EXTI0_IRQn);
-	NVIC->ISER[0] |= (1 << EXTI0_IRQn);
-	NVIC_SetPriority(EXTI0_IRQn,Prio);
-	
-	
-}
-
-void MyTimer_Encoder_Init(TIM_TypeDef * Timer){
-	Timer->CCMR1 |= TIM_CCMR1_CC1S_0; //CC1S=01 -> IC1 mapped on TI1
-	Timer->CCMR1 |= TIM_CCMR1_CC2S_1; //CC2S=10 -> IC2 mapped on TI2
-	//Mode 3 du codeur : SMCR_SMS = 011
-	Timer->SMCR |= (TIM_SMCR_SMS_0 | TIM_SMCR_SMS_1);
-}
-
-void EXTI0_IRQHandler (void)
-{
-	TIM3->CNT &= 0;
-	EXTI->PR |= EXTI_PR_PR0;
-}
-
-
 void TIM2_IRQHandler ( void )
 {
 	TIM2->SR &= ~TIM_SR_UIF;
@@ -105,79 +73,3 @@ void TIM4_IRQHandler ( void )
 	TIM4->SR &= ~TIM_SR_UIF;
 	tim4_function();
 }
-	
-
-//On initialise le port associé aux channel choisi
-void PWM_Port_Init(int Timer_number, int Channel){
-	MyGPIO_Struct_TypeDef PWM_Output;
-	switch (Timer_number) {
-		case 1:
-			PWM_Output.GPIO = GPIOA;
-			PWM_Output.GPIO_Pin = TIMER1_TAB_CH[Channel-1] ;	
-			PWM_Output.GPIO_Conf =	AltOut_Ppull;
-			MyGPIO_Init(&PWM_Output);
-			break;
-		case 2:
-			PWM_Output.GPIO = GPIOA;
-			PWM_Output.GPIO_Pin = TIMER2_TAB_CH[Channel-1] ;	
-			PWM_Output.GPIO_Conf =	AltOut_Ppull;
-			MyGPIO_Init(&PWM_Output);
-			break;
-		case 3:
-			if(Channel<=2){
-				PWM_Output.GPIO = GPIOA;
-			}else{
-				PWM_Output.GPIO = GPIOB;
-			}
-			PWM_Output.GPIO_Pin = TIMER3_TAB_CH[Channel-1] ;	
-			PWM_Output.GPIO_Conf =	AltOut_Ppull;
-			MyGPIO_Init(&PWM_Output);
-			break;
-		case 4:
-			PWM_Output.GPIO = GPIOB;
-			PWM_Output.GPIO_Pin = TIMER4_TAB_CH[Channel-1] ;	
-			PWM_Output.GPIO_Conf =	AltOut_Ppull;
-			MyGPIO_Init(&PWM_Output);
-			break;		
-	}
-}
- 
-void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha){
-	Timer->CCR1 = alpha;	
-}
-
-void MyTimer_PWM(TIM_TypeDef * Timer, int Channel){
-	//Mode 1 -> OCxM bit = 110 in CCMRx
-	switch (Channel) {
-		case 1:
-			Timer->CCMR1 |= TIM_CCMR1_OC1M_2;
-			Timer->CCMR1 |= TIM_CCMR1_OC1M_1;
-			//Timer->CCMR1 |= ~TIM_CCMR1_OC1M_0;
-			
-			Timer->CCER |= TIM_CCER_CC1E;
-			break;
-		case 2:
-			Timer->CCMR1 |= TIM_CCMR1_OC2M_2;
-			Timer->CCMR1 |= TIM_CCMR1_OC2M_1;
-			//Timer->CCMR1 |= ~TIM_CCMR1_OC2M_0;
-			
-			Timer->CCER |= TIM_CCER_CC2E;
-			break;
-		case 3:
-			Timer->CCMR2 |= TIM_CCMR2_OC3M_2;
-			Timer->CCMR2 |= TIM_CCMR2_OC3M_1;
-			//Timer->CCMR2 |= ~TIM_CCMR2_OC3M_0;
-			
-			Timer->CCER |= TIM_CCER_CC3E;
-			break;
-		case 4:
-			Timer->CCMR2 |= TIM_CCMR2_OC4M_2;
-			Timer->CCMR2 |= TIM_CCMR2_OC4M_1;
-			//Timer->CCMR2 |= ~TIM_CCMR2_OC4M_0;
-			
-			Timer->CCER |= TIM_CCER_CC4E;
-			break;		
-	}
-}
-	// Il est censé prendre en argument le tim mais soucis avec les type TIM à revoir
-

@@ -9,6 +9,7 @@ typedef struct{
 	char Timer_num;
 }MyTimer_Struct_TypeDef;
 
+
 /*
 *****************************************************************************************
 			*@brief
@@ -33,19 +34,5 @@ void MyTimer_ActiveIT ( MyTimer_Struct_TypeDef * Timer , char Prio, void(*IT_fun
 void TIM2_IRQHandler ( void );
 void TIM3_IRQHandler ( void );
 void TIM4_IRQHandler ( void );
-void MyTimer_Encoder_Init(TIM_TypeDef * Timer);
-
-void MyTimer_PWM(TIM_TypeDef * Timer, int Channel);
-void PWM_RapportCyclique(TIM_TypeDef * Timer, int alpha);
-void PWM_Port_Init(int Timer_number, int Channel);
-
-void MyZero_ActiveIT(char Prio);
-void EXTI0_IRQHandler (void);
-
-	
-/*
-#define MyTimer_Base_Start(Timer) ()
-#define MyTimer_Base_Stop(Timer) ()
-*/
 
 #endif

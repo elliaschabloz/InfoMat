@@ -1,6 +1,8 @@
 #include "stm32f10x.h"
 #include "MyTimer.h"
+#include "PWM.h"
 #include "stdlib.h"
+
 
 void angle_servo(int alpha, TIM_TypeDef * MyTimer){
 	if (alpha < 45 || alpha > 315){

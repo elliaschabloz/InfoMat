@@ -2,10 +2,11 @@
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
 #include "Servo.h"
+#include "PWM.h"
+#include "Encoder.h"
 
 #define TIMER_GIROUETTE TIM3
 #define GIROUETTE_ARR 0x5A0 //360*4=1440
-
 
 #define TIMER_PWM TIM4 
 #define PWM_ARR 59999
