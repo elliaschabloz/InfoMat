@@ -12,3 +12,4 @@
 .\objects\main.o: ..\MesDrivers\Include\Servo.h
 .\objects\main.o: ..\MesDrivers\Include\PWM.h
 .\objects\main.o: ..\MesDrivers\Include\Encoder.h
+.\objects\main.o: ..\MesDrivers\Include\Bordage.h

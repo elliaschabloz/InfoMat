@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\BordageAuto.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\BordageAuto.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Nov 17 11:05:00 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Nov 17 11:23:15 2021
 <BR><P>
 <H3>Maximum Stack Usage =         80 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -384,7 +384,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bordage_auto
 </UL>
 
-<P><STRONG><a name="[42]"></a>bordage_auto</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, main.o(i.bordage_auto))
+<P><STRONG><a name="[42]"></a>bordage_auto</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, bordage.o(i.bordage_auto))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = bordage_auto &rArr; angle_servo
 </UL>
 <BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;angle_servo
@@ -392,13 +392,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[43]"></a>init_bordage</STRONG> (Thumb, 182 bytes, Stack size 56 bytes, main.o(i.init_bordage))
+<P><STRONG><a name="[43]"></a>init_bordage</STRONG> (Thumb, 182 bytes, Stack size 56 bytes, bordage.o(i.init_bordage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = init_bordage &rArr; PWM_Port_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Port_Init
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyZero_ActiveIT
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyTimer_PWM
+<BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyZero_ActiveIT
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyTimer_Encoder_Init
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Port_Init
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyTimer_PWM
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyTimer_Base_Start
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyTimer_Base_Init
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MyGPIO_Init

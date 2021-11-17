@@ -1,25 +1,18 @@
+/*
+Bordage.h
+-----
+*/
+#ifndef BORDAGE_H
+#define BORDAGE_H
 #include "stm32f10x.h"
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
 #include "Servo.h"
 #include "PWM.h"
 #include "Encoder.h"
-#include "Bordage.h"
+
+void init_bordage(void);
+void bordage_auto(void);
 
 
-
-
-
-
-int main(void) {
-	
-	init_bordage();
-	
-	
-	
-	do{
-		
-		bordage_auto();
-		
-	}while(1);	
-}
+#endif
