@@ -62,8 +62,8 @@ void Init_PWM(void){
 	MyTimerPWM.Timer_num = 2;
 	MyTimer_Base_Init(&MyTimerPWM);
 	MyTimer_Base_Start(&MyTimerPWM);
-	PWM_Port_Init(2, 3);
-	MyTimer_PWM(MyTimerPWM.Timer, 3);
+	PWM_Port_Init(2, 2);
+	MyTimer_PWM(MyTimerPWM.Timer, 2);
 }
 
 int main(void) {
