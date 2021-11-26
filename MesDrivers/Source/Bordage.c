@@ -12,6 +12,10 @@
 #define PWM_ARR 59999
 #define PWM_PSC 24
 
+void bordage_auto(void){
+	angle_servo(TIMER_GIROUETTE->CNT/4, TIMER_PWM);
+}
+
 void init_bordage(void){
 	
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN ; // Broches girouettes sur GPIOA & GPIOB
@@ -64,9 +68,8 @@ void init_bordage(void){
 	MyTimer_Base_Start(&MyTimerPWM);
 	PWM_Port_Init(2, 2);
 	MyTimer_PWM(MyTimerPWM.Timer, 2);
+	
+	MyTimer_ActiveIT (&MyTimerPWM, 5, &bordage_auto);
 
 }
 
-void bordage_auto(void){
-	angle_servo(TIMER_GIROUETTE->CNT/4, TIMER_PWM);
-}
